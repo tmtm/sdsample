@@ -1,0 +1,19 @@
+CREATE TABLE 都道府県 (
+    都道府県コード INT NOT NULL,
+    都道府県名 VARCHAR(255) NOT NULL,
+    人口 INT NOT NULL,
+    面積 DOUBLE NOT NULL,
+    PRIMARY KEY (都道府県コード),
+    UNIQUE (都道府県名)
+);
+
+CREATE TABLE 市町村 (
+    都道府県コード INT NOT NULL,
+    市町村コード INT NOT NULL,
+    区分 INT NOT NULL, -- 1:政令指定都市, 2:市, 3:町村
+    市町村名 VARCHAR(255) NOT NULL,
+    人口 INT NOT NULL,
+    面積 DOUBLE NOT NULL,
+    世帯数 INT NOT NULL,
+    PRIMARY KEY (市町村コード)
+);
